@@ -1,0 +1,13 @@
+{
+    "plugins": [
+        "transform-es2015-modules-commonjs",
+        "transform-es2015-parameters",
+        "transform-class-properties"
+    ],
+    "presets": [
+        ["es2015", {
+            "loose": true
+        }],
+        "stage-1"
+    ]
+}
