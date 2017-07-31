@@ -21,6 +21,12 @@ class ReminderProApp extends React.Component {
         this.props.deleteReminder(id);
     }
 
+    renderStaticHtml() {
+        return (
+            <h1>Testing</h1>
+        )
+    }
+
     renderReminders() {
         const { reminders } = this.props;
         console.log('REMINDERS', reminders);
@@ -74,6 +80,7 @@ class ReminderProApp extends React.Component {
                     </button>
                 </div>
                 { this.renderReminders() }
+                { this.renderStaticHtml() }
                 <div 
                     className="btn btn-danger"
                     onClick={ () => this.props.clearReminders()}>
