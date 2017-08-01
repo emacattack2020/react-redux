@@ -23,7 +23,7 @@ class ReminderProApp extends React.Component {
 
     renderStaticHtml() {
         return (
-            <h1>Testing</h1>
+            <h1>{this.state.text}</h1>
         )
     }
 
