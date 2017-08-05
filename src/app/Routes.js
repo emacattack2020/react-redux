@@ -1,10 +1,10 @@
 import React from "react";
 import {Router, Route, browserHistory, IndexRoute} from "react-router";
 
-import { BaseLayout } from "./redux/components/BaseLayout";
+import { BaseLayout } from "./layout/BaseLayout";
 import ReduxStateExample from "./reduxStateExample/ReduxStateExample";
-import { TestTab } from "./redux/components/TestTab";
-import { SimpleStateApp } from "./redux/components/simpleState/SimpleStateApp";
+import { TestTab } from "./testTab/TestTab";
+import { SimpleStateApp } from "./simpleState/SimpleStateApp";
 import ReminderProContainer from "./reminderPro/ReminderProContainer";
 
 export class Routes extends React.Component {
