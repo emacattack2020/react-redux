@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setName, setTempName } from "../actions/userActions";
-import { User } from '../components/reduxState/User';
-import { Main } from '../components/reduxState/Main';
+import { setName, setTempName } from "./userActions";
+import { User } from './components/User';
+import { Main } from './components/Main';
 
 class ReduxStateExample extends React.Component {
     render() {

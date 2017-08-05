@@ -1,11 +1,11 @@
 import React from "react";
 import {Router, Route, browserHistory, IndexRoute} from "react-router";
 
-import { BaseLayout } from "./components/BaseLayout";
-import ReduxStateExample from "./containers/ReduxStateExample";
-import { TestTab } from "./components/TestTab";
-import { SimpleStateApp } from "./components/simpleState/SimpleStateApp";
-import ReminderProApp from "./containers/ReminderProApp";
+import { BaseLayout } from "./redux/components/BaseLayout";
+import ReduxStateExample from "./reduxStateExample/ReduxStateExample";
+import { TestTab } from "./redux/components/TestTab";
+import { SimpleStateApp } from "./redux/components/simpleState/SimpleStateApp";
+import ReminderProContainer from "./reminderPro/ReminderProContainer";
 
 export class Routes extends React.Component {
     render() {
@@ -16,7 +16,7 @@ export class Routes extends React.Component {
                     <Route path={"reduxStateExample"} component={ReduxStateExample} />
                     <Route path={"testTab"} component={TestTab} />
                     <Route path={"simpleStateApp"} component={SimpleStateApp} />
-                    <Route path={"reminderProApp"} component={ReminderProApp} />
+                    <Route path={"reminderProApp"} component={ReminderProContainer} />
                 </Route>
             </Router>
         );

@@ -3,9 +3,9 @@ import logger from "redux-logger";
 import thunk from "redux-thunk";
 import promise from "redux-promise-middleware";
 
-import math from "./reducers/mathReducer";
-import user from "./reducers/userReducer";
-import reminderPro from "./reducers/reminderProReducer";
+import math from "./reduxStateExample/mathReducer";
+import user from "./reduxStateExample/userReducer";
+import reminderPro from "./reminderPro/reducers";
 
 export default createStore(
     combineReducers({

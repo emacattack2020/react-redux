@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from'react-redux';
-import { addReminder, deleteReminder, clearReminders } from '../actions/reminderProAction';
+import { addReminder, deleteReminder, clearReminders } from './actions';
 import moment from 'moment';
 
-class ReminderProApp extends React.Component {
+class ReminderProContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -110,4 +110,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReminderProApp);
+export default connect(mapStateToProps, mapDispatchToProps)(ReminderProContainer);

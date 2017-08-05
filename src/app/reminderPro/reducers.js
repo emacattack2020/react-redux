@@ -1,4 +1,4 @@
-import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from '../../constants';
+import { ADD_REMINDER, DELETE_REMINDER, CLEAR_REMINDERS } from './constants';
 import { bake_cookie, read_cookie } from 'sfcookies';
 
 const reminder = (action) => {
