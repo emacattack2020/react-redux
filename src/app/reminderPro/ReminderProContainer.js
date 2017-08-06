@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from'react-redux';
 import { addReminder, deleteReminder, clearReminders } from './actions';
-import moment from 'moment';
+import { Reminders } from "./components/Reminders.js";
+import { ClearRemindersButton } from "./components/ClearRemindersButton";
 
 class ReminderProContainer extends React.Component {
     constructor(props) {
@@ -24,31 +25,6 @@ class ReminderProContainer extends React.Component {
     renderStaticHtml() {
         return (
             <h1>{this.state.text}</h1>
-        )
-    }
-
-    renderReminders() {
-        const { reminders } = this.props;
-        console.log('REMINDERS', reminders);
-        return (
-            <ul className="list-group col-sm-4">
-                {
-                    reminders.map(reminder => {
-                        return (
-                            <li key={reminder.id} className="list-group-item">
-                                <div className="list-item">
-                                    <div>{reminder.text}</div>
-                                    <div><em>{moment(new Date(reminder.dueDate)).fromNow()}</em></div>
-                                </div>
-                                <div className="list-item delete-button"
-                                     onClick={ () => this.deleteReminder(reminder.id)}>
-                                    &#x2715;
-                                </div>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
         )
     }
 
@@ -79,13 +55,9 @@ class ReminderProContainer extends React.Component {
                         Add Reminder
                     </button>
                 </div>
-                { this.renderReminders() }
+                <Reminders deleteReminder={this.props.deleteReminder} myProps={this.props} />
                 { this.renderStaticHtml() }
-                <div 
-                    className="btn btn-danger"
-                    onClick={ () => this.props.clearReminders()}>
-                    Clear Reminders
-                </div>
+                <ClearRemindersButton clearReminders={this.props.clearReminders} />
             </div>
         );
     }
