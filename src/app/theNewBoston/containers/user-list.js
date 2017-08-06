@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {selectUser} from "./actions";
+import {selectUser} from "../actions/actions";
 
 class UserList extends Component {
 

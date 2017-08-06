@@ -1,7 +1,7 @@
 import React from 'react';
-import UserList from '../user-list.js';
+import UserList from '../containers/user-list.js';
 import "../../../css/boston.scss";
-import UserDetail from "../user-detail";
+import UserDetail from "../containers/user-detail";
 
 const App = (props) => {
     return (
