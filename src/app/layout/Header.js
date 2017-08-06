@@ -11,6 +11,7 @@ export const Header = (props) => {
                         <li><Link to={"/testTab"} activeStyle={{color: "red"}}>Test</Link></li>
                         <li><Link to={"/simpleStateApp"} activeStyle={{color: "red"}}>Simple State App</Link></li>
                         <li><Link to={"/reminderProAPp"} activeStyle={{color: "red"}}>Reminder Pro App</Link></li>
+                        <li><Link to={"/boston"} activeStyle={{color: "red"}}>Boston</Link></li>
                     </ul>
                 </div>
             </div>
