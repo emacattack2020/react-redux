@@ -4,6 +4,7 @@ import { addReminder, deleteReminder, clearReminders } from './actions';
 import { Reminders } from "./components/Reminders.js";
 import { ClearRemindersButton } from "./components/ClearRemindersButton";
 import { AddReminderButton } from "./components/AddReminderButton";
+import InputFormGroup from "./components/InputFormGroup";
 
 class ReminderProContainer extends React.Component {
     constructor(props) {
@@ -14,8 +15,15 @@ class ReminderProContainer extends React.Component {
         }
     }
 
-    addReminder() {
+    updateReminderText(text) {
+        this.setState(text);
+    }
 
+    updateDueDate(dueDate) {
+        this.setState(dueDate);
+    }
+
+    addReminder() {
         this.props.addReminder(this.state.text, this.state.dueDate);
     }
 
@@ -32,23 +40,11 @@ class ReminderProContainer extends React.Component {
     render() {
         return (
             <div className="App">
-                <div className="title">
-                    Reminder Pro
-                </div>
+                <div className="title">Reminder Pro</div>
                 <div className="form-inline reminder-form">
-                    <div className="form-group">
-                        <input 
-                            className="form-control"
-                            placeholder="I have to..."
-                            onChange={event => this.setState({text: event.target.value})}
-                        />
-                        <input 
-                            className="form-control"
-                            type="datetime-local"
-                            onChange={event => this.setState( {dueDate: event.target.value})}
-                        />
-
-                    </div>
+                    <InputFormGroup 
+                        updateReminderText={this.updateReminderText.bind(this)}
+                        updateDueDate={this.updateDueDate.bind(this)} />
                     <AddReminderButton addReminder={this.addReminder.bind(this)} />
                 </div>
                 <Reminders deleteReminder={this.props.deleteReminder} myProps={this.props} />
