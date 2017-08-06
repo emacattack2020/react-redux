@@ -3,6 +3,7 @@ import { connect } from'react-redux';
 import { addReminder, deleteReminder, clearReminders } from './actions';
 import { Reminders } from "./components/Reminders.js";
 import { ClearRemindersButton } from "./components/ClearRemindersButton";
+import { AddReminderButton } from "./components/AddReminderButton";
 
 class ReminderProContainer extends React.Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class ReminderProContainer extends React.Component {
     }
 
     addReminder() {
-        console.log('this.state.dueDate:', this.state.dueDate);
+
         this.props.addReminder(this.state.text, this.state.dueDate);
     }
 
@@ -48,12 +49,7 @@ class ReminderProContainer extends React.Component {
                         />
 
                     </div>
-                    <button 
-                        type="button"
-                        className="btn btn-success"
-                        onClick={ () => this.addReminder()}>
-                        Add Reminder
-                    </button>
+                    <AddReminderButton addReminder={this.addReminder.bind(this)} />
                 </div>
                 <Reminders deleteReminder={this.props.deleteReminder} myProps={this.props} />
                 { this.renderStaticHtml() }
