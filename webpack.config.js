@@ -7,6 +7,7 @@ var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");
 
 var config = {
+    devtool: 'cheap-module-eval-source-map',
     entry: `${SRC_DIR}/app/indexReactRedux.js`,
     output: {
         path: `${DIST_DIR}/app`,
@@ -56,7 +57,7 @@ var config = {
         modules: ["node_modules"]
     },
     plugins: [
-            new webpack.optimize.UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             preserveComments: "license"
         })
     ]
