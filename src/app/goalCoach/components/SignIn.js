@@ -39,7 +39,6 @@ class SignIn extends Component {
                     <FormControl
                         type="text"
                         style={{marginRight: '5px'}}
-                        value={this.state.value}
                         placeholder="email"
                         onChange={event => this.setState({email: event.target.value})}
                     />
@@ -47,7 +46,6 @@ class SignIn extends Component {
                     <FormControl
                         type="password"
                         style={{marginRight: '5px'}}
-                        value={this.state.value}
                         placeholder="password"
                         onChange={event => this.setState({password: event.target.value})}
                     />
@@ -55,7 +53,7 @@ class SignIn extends Component {
                 </FormGroup>
                 <Button onClick={() => this.signIn()} bsStyle="primary">Sign In</Button>
                 {this.renderAlertMessage()}
-                <Link to={'/goalCoach/signup'}>Sign up instead</Link>
+                <div><Link to={'/goalCoach/signup'}>Sign up instead</Link></div>
             </Form>
         )
     }
