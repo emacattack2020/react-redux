@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
-import { Button } from 'react-bootstrap';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
 import { firebaseApp } from '../../firebase';
 
 export default class SignUp extends React.Component {
@@ -23,28 +23,38 @@ export default class SignUp extends React.Component {
         this.setState({error})
       })
   }
-
+  getValidationState() {
+    const length = this.state.password.length;
+    if (length > 10) return 'success';
+    else if (length > 5) return 'warning';
+    else if (length > 0) return 'error';
+  }
   render() {
     return (
       <div className="form-inline" style={{margin: '5%'}}>
         <h2>Sign Up</h2>
-        <div className="form-group">
-          <input
-            className="form-control"
-            type="text"
-            style={{marginRight: '5px'}}
-            placeholder="email"
-            onChange={event => this.setState({email: event.target.value})}
-          />
-          <input
-            className="form-control"
-            type="password"
-            style={{marginRight: '5px'}}
-            placeholder="password"
-            onChange={event => this.setState({password: event.target.value})}
-          />
+          <FormGroup
+            controlId="formBasicText"
+            validationState={this.getValidationState()}
+          >
+            <FormControl
+              type="text"
+              style={{marginRight: '5px'}}
+              value={this.state.value}
+              placeholder="email"
+              onChange={event => this.setState({email: event.target.value})}
+            />
+            <FormControl.Feedback />
+            <FormControl
+              type="password"
+              style={{marginRight: '5px'}}
+              value={this.state.value}
+              placeholder="password"
+              onChange={event => this.setState({password: event.target.value})}
+            />
+            <FormControl.Feedback />
+          </FormGroup>
           <Button onClick={() => this.signUp()} bsStyle="primary">Sign Up</Button>
-        </div>
         <div>{this.state.error.message}</div>
         <div><Link to={'/goalCoach/signin'}>Already a user? Sign in instead</Link></div>
       </div>
