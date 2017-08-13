@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { Button } from 'react-bootstrap';
 import { firebaseApp } from '../../firebase';
 
 class SignIn extends Component {
@@ -42,13 +43,7 @@ class SignIn extends Component {
             placeholder="password"
             onChange={event => this.setState({password: event.target.value})}
           />
-          <button
-            className="btn btn-primary"
-            type="button"
-            onClick={() => this.signIn()}
-          >
-            Sign In
-          </button>
+          <Button onClick={() => this.signIn()} bsStyle="primary">Sign In</Button>
         </div>
         <div>{this.state.error.message}</div>
         <div><Link to={'/goalCoach/signup'}>Sign up instead</Link></div>

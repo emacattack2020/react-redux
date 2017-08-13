@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import { completeGoalRef, goalRef } from '../../firebase';
 
 class GoalItem extends Component {
@@ -19,12 +20,7 @@ class GoalItem extends Component {
       <div style={{margin: '5px'}}>
         <strong>{title}</strong>
         <span style={{marginRight: '5px'}}> submitted by <em>{email}</em></span>
-        <button
-          className="btn btn-sm btn-primary"
-          onClick={() => this.completeGoal()}
-        >
-          Complete
-        </button>
+        <Button onClick={() => this.completeGoal()} bsStyle="primary" bsSize="small">Complete</Button>
       </div>
     )
   }
