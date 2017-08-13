@@ -8,6 +8,12 @@ import Boston from "./theNewBoston/index";
 import { SimpleStateApp } from "./simpleState/SimpleStateApp";
 import ReminderProContainer from "./reminderPro/ReminderProContainer";
 
+import App from "./goalCoach/components/App";
+import SignIn from "./goalCoach/components/SignIn";
+import SignUp from "./goalCoach/components/SignUp";
+import GoalCoach from "./goalCoach/GoalCoach";
+
+
 export class Routes extends React.Component {
     render() {
         return (
@@ -19,6 +25,10 @@ export class Routes extends React.Component {
                     <Route path={"simpleStateApp"} component={SimpleStateApp} />
                     <Route path={"reminderProApp"} component={ReminderProContainer} />
                     <Route path={"boston"} component={Boston} />
+                    <Route path={"goalCoach"} component={GoalCoach} />
+                    <Route path={"goalCoach/signin"} component={SignIn} />
+                    <Route path={"goalCoach/signup"} component={SignUp} />
+                    <Route path={"goalCoach/app"} component={App} />
                 </Route>
             </Router>
         );
