@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Button, Form, FormGroup, FormControl, Alert } from 'react-bootstrap';
 import { goalRef } from '../../firebase';
 
 class AddGoal extends Component {
@@ -19,25 +20,18 @@ class AddGoal extends Component {
 
   render() {
     return (
-      <div className="form-inline">
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Add a goal"
-            className="form-control"
-            style={{marginRight: '5px'}}
-            onChange={event => this.setState({title: event.target.value})}
-          />
-          <button
-            className="btn btn-success"
-            type="button"
-            onClick={() => this.addGoal()}
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    )
+        <Form inline>
+            <FormGroup controlId="formBasicText">
+                <FormControl
+                    type="text"
+                    style={{marginRight: '5px'}}
+                    placeholder="Add a goal"
+                    onChange={event => this.setState({title: event.target.value})}
+                />
+            </FormGroup>
+            <Button onClick={() => this.addGoal()} bsStyle="success">Submit</Button>
+        </Form>
+    );
   }
 }
 
@@ -47,6 +41,5 @@ function mapStateToProps(state) {
     email
   }
 }
-
 
 export default connect(mapStateToProps, null)(AddGoal);
