@@ -3,6 +3,7 @@ import { Collapse, Button } from 'react-bootstrap';
 import Promotions from "./Promotions";
 //https://react-bootstrap.github.io/components.html#utilities
 //https://github.com/nkbt/react-collapse
+//https://www.npmjs.com/package/react-collapse
 export class TestTab extends React.Component {
   constructor(...args) {
     super(...args);
