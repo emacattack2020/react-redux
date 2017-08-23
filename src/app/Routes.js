@@ -13,6 +13,8 @@ import SignIn from "./goalCoach/components/SignIn";
 import SignUp from "./goalCoach/components/SignUp";
 import GoalCoach from "./goalCoach/GoalCoach";
 
+import AjaxApp from "./ajax/components/App";
+
 
 export class Routes extends React.Component {
     render() {
@@ -24,6 +26,7 @@ export class Routes extends React.Component {
                     <Route path={"collapseExample"} component={CollapseExample} />
                     <Route path={"simpleStateApp"} component={SimpleStateApp} />
                     <Route path={"reminderProApp"} component={ReminderProContainer} />
+                    <Route path={"ajaxApp"} component={AjaxApp} />
                     <Route path={"boston"} component={Boston} />
                     <Route path={"goalCoach"} component={GoalCoach} />
                     <Route path={"goalCoach/signin"} component={SignIn} />

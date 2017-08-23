@@ -16,6 +16,8 @@ import goalCoachReducer from "./goalCoach/reducers/reducer_user";
 import goalsReducer from "./goalCoach/reducers/reducer_goals";
 import completedGoalsReducer from "./goalCoach/reducers/reducer_completed_goals";
 
+import ajaxUsers from "./ajax/reducers/usersReducer";
+
 import { logUser } from './goalCoach/actions';
 
 import {firebaseApp}  from "./firebase";
@@ -31,7 +33,8 @@ const store = createStore(
         activeUser: ActiveUserReducer,
         goalCoachReducer: goalCoachReducer,
         goals: goalsReducer,
-        completeGoals: completedGoalsReducer
+        completeGoals: completedGoalsReducer,
+        ajaxUsers: ajaxUsers
     }),
     {}, 
     composeEnhancers(

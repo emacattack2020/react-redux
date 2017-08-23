@@ -7,6 +7,7 @@ export const Header = (props) => {
             <div className="container">
                 <div className="navbar-header">
                     <ul className="nav navbar-nav">
+                        <li><Link to={"/ajaxApp"} activeStyle={{color: "red"}}>AJAX</Link></li>
                         <li><Link to={"/reduxStateExample"} activeStyle={{color: "red"}}>Redux State Example</Link></li>
                         <li><Link to={"/collapseExample"} activeStyle={{color: "red"}}>Collapse</Link></li>
                         <li><Link to={"/simpleStateApp"} activeStyle={{color: "red"}}>Simple State App</Link></li>
