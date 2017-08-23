@@ -5,15 +5,15 @@ import { firebaseApp } from '../../firebase';
 
 class SignIn extends Component {
     constructor(props) {
-    super(props);
+        super(props);
         this.state = {
             email: '',
             password: '',
             error: {
                 message: ''
-          }
-      }
-  }
+            }
+        }
+    }
 
     signIn() {
       console.log('this.state', this.state);

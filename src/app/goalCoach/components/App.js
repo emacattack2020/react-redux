@@ -6,7 +6,7 @@ import CompleteGoalList from './CompleteGoalList';
 import { Button } from 'react-bootstrap';
 import { firebaseApp } from '../../firebase';
 
-class App extends React.Component {
+export default class App extends React.Component {
   signOut() {
     firebaseApp.auth().signOut();
   }
@@ -31,9 +31,9 @@ class App extends React.Component {
 
 
 
-function mapStateToProps(state) {
-  // console.log('state', state);
-  return {}
-}
+// function mapStateToProps(state) {
+//   console.log('state', state);
+//   return {}
+// }
 
-export default connect(mapStateToProps, null)(App);
+// export default connect(mapStateToProps, null)(App);
