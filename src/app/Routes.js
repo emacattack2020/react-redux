@@ -3,7 +3,7 @@ import {Router, Route, browserHistory, IndexRoute} from "react-router";
 
 import { BaseLayout } from "./layout/BaseLayout";
 import ReduxStateExample from "./reduxStateExample/ReduxStateExample";
-import { TestTab } from "./testTab/TestTab";
+import { CollapseExample } from "./collapse/CollapseExample";
 import Boston from "./theNewBoston/index";
 import { SimpleStateApp } from "./simpleState/SimpleStateApp";
 import ReminderProContainer from "./reminderPro/ReminderProContainer";
@@ -21,7 +21,7 @@ export class Routes extends React.Component {
                 <Route path={"/"} component={BaseLayout} >
                     <IndexRoute component={ReduxStateExample} />
                     <Route path={"reduxStateExample"} component={ReduxStateExample} />
-                    <Route path={"testTab"} component={TestTab} />
+                    <Route path={"collapseExample"} component={CollapseExample} />
                     <Route path={"simpleStateApp"} component={SimpleStateApp} />
                     <Route path={"reminderProApp"} component={ReminderProContainer} />
                     <Route path={"boston"} component={Boston} />

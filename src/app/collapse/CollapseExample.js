@@ -4,7 +4,7 @@ import Promotions from "./Promotions";
 //https://react-bootstrap.github.io/components.html#utilities
 //https://github.com/nkbt/react-collapse
 //https://www.npmjs.com/package/react-collapse
-export class TestTab extends React.Component {
+export class CollapseExample extends React.Component {
   constructor(...args) {
     super(...args);
 
