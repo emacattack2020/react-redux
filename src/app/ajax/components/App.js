@@ -19,6 +19,7 @@ class App extends React.Component {
     }
 
     render(){
+        console.log("APP COMPONENT RENDER");
         return (
             <div>
                 <Layout />

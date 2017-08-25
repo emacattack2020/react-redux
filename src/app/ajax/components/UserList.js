@@ -8,11 +8,11 @@ class UserList extends React.Component {
         if(Object.getOwnPropertyNames(this.props.users).length === 0){
             return (<div></div>)
         } else {
-            console.log(this.props.users.users);
+            console.log("USER_LIST_COMPONENT_DATA: ",this.props.users.users);
         }
         var userNodes = this.props.users.users.map(function(user){
             return (
-                <User name={user.name} email={user.email} id={user.id} />
+                <User key={user.id} name={user.name} email={user.email} id={user.id} />
             )
         })
         return (
