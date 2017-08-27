@@ -13,6 +13,8 @@ import SignIn from "./goalCoach/components/SignIn";
 import SignUp from "./goalCoach/components/SignUp";
 import GoalCoach from "./goalCoach/GoalCoach";
 
+import TestApp from "./test/app";
+
 import AjaxApp from "./ajax/components/App";
 
 
@@ -32,6 +34,7 @@ export class Routes extends React.Component {
                     <Route path={"goalCoach/signin"} component={SignIn} />
                     <Route path={"goalCoach/signup"} component={SignUp} />
                     <Route path={"goalCoach/app"} component={App} />
+                    <Route path={"test/app"} component={TestApp} />
                 </Route>
             </Router>
         );

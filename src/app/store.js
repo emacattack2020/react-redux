@@ -17,6 +17,7 @@ import goalsReducer from "./goalCoach/reducers/reducer_goals";
 import completedGoalsReducer from "./goalCoach/reducers/reducer_completed_goals";
 
 import ajaxUsers from "./ajax/reducers/usersReducer";
+import namesReducer from './test/reducer';
 
 import { logUser } from './goalCoach/actions';
 
@@ -34,7 +35,8 @@ const store = createStore(
         goalCoachReducer: goalCoachReducer,
         goals: goalsReducer,
         completeGoals: completedGoalsReducer,
-        ajaxUsers: ajaxUsers
+        ajaxUsers: ajaxUsers,
+        namesReducer: namesReducer
     }),
     {}, 
     composeEnhancers(
