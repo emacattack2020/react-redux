@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getNames(){
     return function(dispatch){
-        dispatch({type:'REQUEST_NAMES', isNamesFetching: true});
+        dispatch({type:'REQUEST_NAMES', isNamesFetching: true, payload: []});
         axios.get('https://jsonplaceholder.typicode.com/users')
             .then((response) => {
                 console.log('RECIEVE_NAMES:', response.data);

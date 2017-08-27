@@ -4,6 +4,7 @@ const names = (state = {}, action) => {
         case "REQUEST_NAMES":
             state = {
                 ...state,
+                names: action.payload, 
                 isNamesFetching: action.isNamesFetching
             }
             break;
