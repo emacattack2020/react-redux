@@ -4,10 +4,19 @@ import { Button } from 'react-bootstrap';
 import { connect } from "react-redux";
 import { getNames, getUserDetails } from "./action";
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import CircularProgress from 'material-ui/CircularProgress';
+
 class App extends React.Component {
     renderUserDetails() {
-        console.log("RENDER USER DETAILS CALLED")
-
+        console.log("RENDER USER DETAILS CALLED", this.props.names.isFetching)
+        if(this.props.names.isFetching) {
+            return (
+                <div>
+                    <MuiThemeProvider><CircularProgress /></MuiThemeProvider>
+                </div>
+            )
+        }
         return (
             <ul>
                 <li>{this.props.names.details.username}</li>
@@ -17,20 +26,27 @@ class App extends React.Component {
         )
     }
     isUserSelected(id) {
-        return this.props.names.details && this.props.names.selectedUser == id
+        console.log("this.props.names.details", this.props.names.details)
+        return this.props.names.selectedUser == id
     }
     createListItems() {
+        if(this.props.names.isNamesFetching) {
+            return (
+                <MuiThemeProvider><CircularProgress /></MuiThemeProvider>
+            )
+        }
+        console.log("this.props.names:" ,this.props.names)
         if(this.props.names.names) {
             console.log("NAMES:" ,this.props.names.names)
             return this.props.names.names.map((user) => {
-                return (
+                return ( 
                     <li key={user.id} onClick={() => this.props.getUserDetails(user.id) }>
                         {user.id} - {user.name} - {user.email}
                         {this.isUserSelected(user.id) && this.renderUserDetails()}
                     </li>
                 )
             });
-        } 
+        }
     }
     render(){
         return (
